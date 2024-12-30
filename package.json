@@ -9,7 +9,6 @@
     "ios:se":"react-native run-ios --udid B6DAAD5E-1A5D-43CA-B462-3F9B9FF5DF85",
     "lint": "eslint .",
     "start": "react-native start",
-    
     "test": "jest"
   },
   "dependencies": {
