@@ -52,5 +52,4 @@ yarn android
 
 ![Ekran Görüntüsü 1](screenshots/responsive.png)
 
-<h2>Proje Tanıtımı</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0CRhCaiSE5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Uygulama Videosu](https://www.youtube.com/watch?v=0CRhCaiSE5g)
