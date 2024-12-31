@@ -2,14 +2,13 @@ import {FlatList, Text, View} from 'react-native';
 import {theme} from '../../../theme';
 import {CastItem, ListSeperator} from '../../../components';
 import React, {useCallback, useMemo} from 'react';
-import {ICast} from '../../../types/movieType';
 import {createGetItemLayout} from '../../../constants/helpers';
+import { ICast } from '../../../types/CastType';
 
 interface ICastlist {
   cast: ICast[];
 }
 const CastList: React.FC<ICastlist> = ({cast}) => {
-
   const horizontalGetItemLayout = useMemo(
     () => createGetItemLayout(100, 10),
     [],
@@ -18,7 +17,7 @@ const CastList: React.FC<ICastlist> = ({cast}) => {
   const renderCastItem = useCallback(({item}: {item: ICast}) => {
     return <CastItem item={item} />;
   }, []);
-  
+
   return (
     <View style={[theme.layout.gap]}>
       <Text style={[theme.text.title]}>Artist</Text>
@@ -36,4 +35,4 @@ const CastList: React.FC<ICastlist> = ({cast}) => {
   );
 };
 
-export default CastList
+export default CastList;

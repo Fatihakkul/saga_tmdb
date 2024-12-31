@@ -10,7 +10,7 @@ import {
   fetchLoadPopularMovies,
   fetchPopularMovies,
   getMovieDetails,
-} from '../../services/api';
+} from '../services/api';
 import { RootState } from '../store';
 
 

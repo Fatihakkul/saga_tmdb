@@ -19,13 +19,8 @@ const favoriteReducer = (state = initialState, action: any): FavoriteState => {
       return {
         ...state,
         favorites: state.favorites.filter(
-          (movie: any) => movie.id !== action.payload,
+          (movie: Movie) => movie.id !== action.payload,
         ),
-      };
-    case types.LOAD_FAVORITES:
-      return {
-        ...state,
-        favorites: action.payload,
       };
     default:
       return state;

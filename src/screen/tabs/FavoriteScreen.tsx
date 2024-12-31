@@ -4,6 +4,7 @@ import {useTypedSelector} from '../../redux/store';
 import {Container, Header, MoviesItem} from '../../components';
 import {createGetItemLayout} from '../../constants/helpers';
 import {verticalScale} from 'react-native-size-matters';
+import {theme} from '../../theme';
 
 const FavoriteScreen = () => {
   const {favorites} = useTypedSelector(state => state.favorite);
@@ -24,8 +25,8 @@ const FavoriteScreen = () => {
       <View style={styles.container}>
         <FlatList
           data={favorites}
-          style={{width: '100%', alignSelf: 'center', maxWidth: 650}}
-          columnWrapperStyle={{justifyContent: 'space-between'}}
+          style={styles.list}
+          columnWrapperStyle={[theme.layout.justifyBetween]}
           renderItem={renderMovieItem}
           numColumns={2}
           keyExtractor={item => item?.id?.toString()}
@@ -46,19 +47,10 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%',
   },
-  movieCard: {
-    marginBottom: 20,
-    alignItems: 'center',
-  },
-  moviePoster: {
-    width: 150,
-    height: 225,
-    borderRadius: 10,
-  },
-  movieTitle: {
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: 'bold',
+  list: {
+    width: '100%',
+    alignSelf: 'center',
+    maxWidth: 650,
   },
 });
 

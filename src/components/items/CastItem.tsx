@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
-import {ICast} from '../../types/movieType';
+import React, {memo} from 'react';
 import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
+import { ICast } from '../../types/CastType';
 
 interface ICastItemProps {
   item: ICast;
@@ -15,22 +15,24 @@ const CastItem: React.FC<ICastItemProps> = ({item}) => {
           uri: `https://image.tmdb.org/t/p/w200${item.profile_path}`,
           priority: FastImage.priority.high,
         }}
-        style={{width: 100, height: 100}}
+        style={style.image}
       />
     </View>
   );
 };
 
-
 const style = StyleSheet.create({
-    container : {
-        width:100,
-        height:100,
-        borderRadius:100,
-        overflow:'hidden',
-        alignItems:'center',
-        justifyContent:'center'
-
-    }
-})
+  container: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 100,
+    height: 100,
+  },
+});
 export default memo(CastItem);

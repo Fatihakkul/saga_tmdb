@@ -1,4 +1,4 @@
-import api from "./client";
+import api from './client';
 
 export const fetchPopularMovies = async () => {
   try {
@@ -9,8 +9,7 @@ export const fetchPopularMovies = async () => {
   }
 };
 
-
-export const fetchLoadPopularMovies = async (page:number) => {
+export const fetchLoadPopularMovies = async (page: number) => {
   try {
     const response = await api.get(`/movie/popular?page=${page}`);
     return response.data;

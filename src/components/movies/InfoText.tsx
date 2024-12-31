@@ -10,7 +10,9 @@ const InfoText: React.FC<IInfoTextProps> = ({title, value}) => {
   return (
     <View>
       <Text style={[theme.text.title]}>{value}</Text>
-      <Text>{title}</Text>
+      <Text style={[theme.text.font_12, theme.text.colorGray_400]}>
+        {title}
+      </Text>
     </View>
   );
 };

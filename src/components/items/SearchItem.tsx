@@ -19,16 +19,11 @@ const SearchItem: React.FC<ISearchItem> = ({item}) => {
         <View style={style.imageWrapper}>
           <FastImage
             source={{uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`}}
-            style={{width: 100, height: 160}}
+            style={style.image}
             resizeMode="stretch"
           />
         </View>
-        <View
-          style={[
-            style.infoWrapper,
-            theme.layout.justifyCenter,
-            theme.layout.gap,
-          ]}>
+        <View style={[theme.layout.justifyCenter, theme.layout.gap]}>
           <Text>{item.title}</Text>
           <Text>{item.vote_average.toFixed(1)}</Text>
         </View>
@@ -50,6 +45,9 @@ const style = StyleSheet.create({
     width: 100,
     overflow: 'hidden',
   },
-  infoWrapper: {},
+  image: {
+    width: 100,
+    height: 160,
+  },
 });
 export default memo(SearchItem);

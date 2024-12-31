@@ -1,8 +1,7 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
-import * as types from '../action_types/searchTypes'
-import {searchMovies} from '../../services/api';
-import { searchMoviesSuccess } from '../actions/searchActions';
-
+import * as types from '../action_types/searchTypes';
+import {searchMovies} from '../services/api';
+import {searchMoviesSuccess} from '../actions/searchActions';
 
 function* searchMoviesSaga(action: any): any {
   try {

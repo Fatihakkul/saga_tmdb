@@ -1,7 +1,8 @@
-import {StyleSheet, View, ViewStyle} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {tabs} from '../../constants/tabs';
 import TabItem from './TabItem';
+import {theme} from '../../theme';
 
 type Props = {
   currentTabScreen: string;
@@ -9,6 +10,7 @@ type Props = {
 
 const BottomBar = ({currentTabScreen}: Props) => {
   const insets = useSafeAreaInsets();
+
   return (
     <>
       <View
@@ -33,19 +35,14 @@ const BottomBar = ({currentTabScreen}: Props) => {
 };
 export default BottomBar;
 
-type Style = {
-  root: ViewStyle;
-};
-
-const styles = StyleSheet.create<Style>({
+const styles = StyleSheet.create({
   root: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     paddingHorizontal: 10,
-    alignItems: 'center',
     paddingVertical: 14,
-    borderTopWidth: 1,
-    borderTopColor: '#EEEEEE',
-    backgroundColor: 'white',
+    ...theme.backgorunds.bgWhite,
+    ...theme.layout.alignCenter,
+    ...theme.layout.justifyBetween,
+    ...theme.layout.flexDirectionRow,
+    ...theme.borders.borderTop,
   },
 });

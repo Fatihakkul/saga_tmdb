@@ -22,9 +22,8 @@ const Container: React.FC<PropsWithChildren<TContainer>> = ({
         theme.layout.flex,
         theme.layout.alignCenter,
         theme.layout.paddingBottom,
-        {backgroundColor: background ?? theme.colors.white},
+        {backgroundColor: background ?? theme.colors.white, paddingTop: top},
         full && [theme.layout.paddingX],
-        {paddingTop: top},
         style,
       ]}>
       {children}

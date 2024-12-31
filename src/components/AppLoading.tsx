@@ -1,6 +1,6 @@
-import {ActivityIndicator, StatusBar, StyleSheet, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {useTypedSelector} from '../redux/store';
-import { deviceLayoutMetric } from '../constants/utils';
+import {theme} from '../theme';
 
 const AppLoading: React.FC = () => {
   const isLoading = useTypedSelector(state => state.movie.loading);
@@ -15,17 +15,17 @@ const AppLoading: React.FC = () => {
 
 const style = StyleSheet.create({
   container: {
-    position: 'absolute',
     top: 0,
     left: 0,
     bottom: 0,
     right: 0,
     zIndex: 10,
-    height:deviceLayoutMetric.deviceHeight,
-    width: deviceLayoutMetric.deviceWidth,
-    alignItems: 'center',
-    justifyContent: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    ...theme.layout.widthDevice,
+    ...theme.layout.deviceHeight,
+    ...theme.layout.pAbsolute,
+    ...theme.layout.alignCenter,
+    ...theme.layout.justifyCenter,
   },
 });
 

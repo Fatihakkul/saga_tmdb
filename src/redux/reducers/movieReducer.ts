@@ -1,4 +1,5 @@
-import {ICast, Movie, MovieDetail} from '../../types/movieType';
+import { ICast } from '../../types/CastType';
+import { Movie, MovieDetail} from '../../types/movieType';
 import * as types from '../action_types/moviesTypes';
 
 interface MovieState {

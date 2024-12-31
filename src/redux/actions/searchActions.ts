@@ -11,7 +11,7 @@ export const searchMoviesSuccess = (movies: Movie[]) => ({
   payload: movies,
 });
 
-export const searchMoviesFailure = (error: string) => ({
+export const searchMoviesFailure = (error: any) => ({
   type: types.SEARCH_MOVIES_FAILURE,
   payload: error,
 });

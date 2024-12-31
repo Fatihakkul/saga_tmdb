@@ -1,8 +1,9 @@
 import axios, {AxiosError, AxiosResponse} from 'axios';
+import Config from 'react-native-config';
 import {showMessage} from 'react-native-flash-message';
 
-const API_KEY = '888cec2ef779b9dae3b5df979ce1e712';
-const BASE_URL = 'https://api.themoviedb.org/3';
+const API_KEY = Config.API_KEY;
+const BASE_URL = Config.BASE_URL;
 
 const api = axios.create({
   baseURL: BASE_URL,

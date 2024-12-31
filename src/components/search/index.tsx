@@ -1,9 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {View, StyleSheet} from 'react-native';
-import Animated, {
-  useSharedValue,
-} from 'react-native-reanimated';
-import {deviceLayoutMetric} from '../../constants/utils';
+import {useSharedValue} from 'react-native-reanimated';
 import {useDispatch} from 'react-redux';
 import {useTypedSelector} from '../../redux/store';
 import SearchContent from './SearchContent';
@@ -14,6 +11,7 @@ import {
 import useDebounce from '../../hooks/useDebounce';
 import AnimatedButton from '../buttons/AnimatedIconButton';
 import AnimatedTextInput from './SearchInput';
+import { theme } from '../../theme';
 
 const SearchHeader = ({
   setIsSearchActive,
@@ -67,31 +65,14 @@ const SearchHeader = ({
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    ...theme.layout.flexDirectionRow,
+    ...theme.layout.justifyCenter,
+    ...theme.layout.alignCenter,
+    ...theme.layout.pAbsolute,
     padding: 10,
-    position: 'absolute',
     right: 10,
     top: 0,
     bottom: 0,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 20,
-  },
-  searchInput: {
-    height: 40,
-    width: '100%',
-  },
-  searchContent: {
-    width: deviceLayoutMetric.deviceWidth - 10,
-    backgroundColor: 'red',
-    zIndex: 999,
-    position: 'absolute',
-    top: 50,
-    right: -5,
   },
 });
 

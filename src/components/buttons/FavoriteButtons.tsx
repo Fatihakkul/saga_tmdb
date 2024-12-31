@@ -24,7 +24,6 @@ const FavoriteButton: React.FC<IProps> = ({movie}) => {
   );
 
   const handleClick = () => {
-
     if(!isFavorite && favorites.length === 10){
       showMessage({
         message: 'Could not add to favorites!',

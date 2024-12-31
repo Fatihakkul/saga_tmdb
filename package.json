@@ -5,8 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "ios:ipad":"react-native run-ios --udid F93E4E8E-5CB3-4807-B48F-5D5CC8407106",
-    "ios:se":"react-native run-ios --udid B6DAAD5E-1A5D-43CA-B462-3F9B9FF5DF85",
+    "ios:ipad": "react-native run-ios --udid F93E4E8E-5CB3-4807-B48F-5D5CC8407106",
+    "ios:se": "react-native run-ios --udid B6DAAD5E-1A5D-43CA-B462-3F9B9FF5DF85",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"
@@ -21,6 +21,7 @@
     "axios": "^1.7.9",
     "react": "18.3.1",
     "react-native": "0.76.5",
+    "react-native-config": "^1.5.3",
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "^2.21.2",

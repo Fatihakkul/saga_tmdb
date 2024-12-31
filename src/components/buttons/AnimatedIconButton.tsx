@@ -1,5 +1,5 @@
-import React, {useRef, useState} from 'react';
-import {TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {TouchableOpacity, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Animated, {
   useSharedValue,

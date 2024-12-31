@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo} from 'react';
-import {FlatList, View, StyleSheet, ActivityIndicator} from 'react-native';
+import {FlatList, View, StyleSheet} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux/store';
 import {
@@ -11,12 +11,11 @@ import {Container, Header} from '../../components';
 import {deviceLayoutMetric} from '../../constants/utils';
 import {createGetItemLayout} from '../../constants/helpers';
 import {verticalScale} from 'react-native-size-matters';
+import {theme} from '../../theme';
 
-const HomeScreen = ({navigation}: any) => {
+const HomeScreen = () => {
   const dispatch = useDispatch();
-  const {movies, loading, error} = useSelector(
-    (state: RootState) => state.movie,
-  );
+  const {movies, loading} = useSelector((state: RootState) => state.movie);
 
   useEffect(() => {
     dispatch(fetchMoviesRequest());
@@ -42,10 +41,8 @@ const HomeScreen = ({navigation}: any) => {
       <View style={styles.container}>
         <FlatList
           data={movies}
-          style={{width: '100%', alignSelf: 'center', maxWidth: 650}}
-          columnWrapperStyle={{
-            justifyContent: 'space-between',
-          }}
+          style={styles.list}
+          columnWrapperStyle={[theme.layout.justifyBetween]}
           renderItem={renderMovieItem}
           numColumns={2}
           keyExtractor={item => item?.id?.toString()}
@@ -68,19 +65,10 @@ const styles = StyleSheet.create({
     width: deviceLayoutMetric.deviceWidth,
     alignItems: 'center',
   },
-  movieCard: {
-    marginBottom: 20,
-    alignItems: 'center',
-  },
-  moviePoster: {
-    width: 150,
-    height: 225,
-    borderRadius: 10,
-  },
-  movieTitle: {
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: 'bold',
+  list: {
+    width: '100%',
+    alignSelf: 'center',
+    maxWidth: 650,
   },
 });
 

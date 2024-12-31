@@ -29,7 +29,7 @@ const MoviesItem: React.FC<IProps> = ({movie}) => {
         style={style.imageWrapper}
         imageStyle={style.image}
         resizeMode="stretch">
-        <View style={{paddingTop: 15, paddingRight: 10}}>
+        <View style={style.favoriteButtonWrapper}>
           <FavoriteButton movie={movie} />
         </View>
         <MovieInfoCard movie={movie} />
@@ -60,6 +60,10 @@ const style = StyleSheet.create({
     height: 'auto',
     borderRadius: 10,
     maxWidth: 300,
+  },
+  favoriteButtonWrapper: {
+    paddingTop: 15,
+    paddingRight: 10,
   },
 });
 

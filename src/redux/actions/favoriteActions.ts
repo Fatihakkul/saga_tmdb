@@ -10,8 +10,3 @@ export const removeFromFavorites = (movieId: number) => ({
   type: types.REMOVE_FROM_FAVORITES,
   payload: movieId,
 });
-
-export const loadFavorites = (movies: Movie[]) => ({
-  type: types.LOAD_FAVORITES,
-  payload: movies,
-});

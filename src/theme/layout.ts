@@ -94,7 +94,7 @@ export const layout = StyleSheet.create({
     marginRight: scale(30),
   },
   sgap: {
-    gap: 5,
+    gap: scale(5),
   },
   gap: {
     gap: 10,
@@ -185,6 +185,9 @@ export const layout = StyleSheet.create({
   },
   widthDevice: {
     width: deviceLayoutMetric.deviceWidth,
+  },
+  deviceHeight: {
+    height: deviceLayoutMetric.deviceHeight,
   },
   backgroundFull: {
     flex: 1,

@@ -1,16 +1,14 @@
 
 
-import { Movie } from '../../types/movieType';
+import { Movie, MovieDetail } from '../../types/movieType';
 import * as types from '../action_types/moviesTypes'
-
-
 
 export const fetchMovieDetailRequest = (movieId:string) => ({
   type: types.FETCH_MOVIE_REQUEST,
   payload: movieId
 });
 
-export const fetchMovieDetailSuccess = (movie:any) => ({
+export const fetchMovieDetailSuccess = (movie: MovieDetail) => ({
   type: types.FETCH_MOVIE_SUCCESS,
   payload: movie
 });
@@ -25,7 +23,7 @@ export const fetchMoviesSuccess = (movies: Movie[]) => ({
   payload: movies,
 });
 
-export const fetchMoviesFailure = (error: string) => ({
+export const fetchMoviesFailure = (error: any) => ({
   type:  types.FETCH_POPULAR_MOVIES_FAILURE,
   payload: error,
 });
@@ -35,12 +33,12 @@ export const loadMoreMoviesRequest = () => ({
   type: types.LOAD_FETCH_POPULAR_MOVIES_REQUEST,
 });
 
-export const loadMoreMoviesSuccess = (movies: any) => ({
+export const loadMoreMoviesSuccess = (movies: Movie[]) => ({
   type:  types.LOAD_FETCH_POPULAR_MOVIES_SUCCESS,
   payload: movies,
 });
 
-export const loadMoreMoviesFailure = (error: string) => ({
+export const loadMoreMoviesFailure = (error: any) => ({
   type:  types.LOAD_FETCH_POPULAR_MOVIES_FAILURE,
   payload: error,
 });

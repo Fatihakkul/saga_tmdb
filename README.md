@@ -5,32 +5,32 @@ Bu projede kullanılan başlıca kütüphaneler ve işlevleri:
 ## Kurulum adımları
 
 #### Projeyi klonla
-``
+```
 git clone https://github.com/Fatihakkul/saga_tmdb
-``
+```
 
 #### Proje dizininde paketleri yükle
-``
+```
 yarn 
-``
+```
 
 #### Pods'ları yükle 
-``
+```
 cd ios && pod install && cd .. 
-``
+```
 
 
 ## Projeyi ayağa kaldırmak için
 
 #### iOS'da
-``
+```
 yarn ios 
-``
+```
 
 #### Android'de
-``
+```
 yarn android 
-``
+```
 
 ## Kullanılan Kütüphaneler
 

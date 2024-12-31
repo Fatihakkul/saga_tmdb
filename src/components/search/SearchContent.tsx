@@ -11,6 +11,7 @@ import {Movie} from '../../types/movieType';
 import SearchItem from '../items/SearchItem';
 import {ListSeperator} from '..';
 import {createGetItemLayout} from '../../constants/helpers';
+import { theme } from '../../theme';
 
 interface ISearchContentProps {
   animation: SharedValue<number>;
@@ -56,10 +57,10 @@ const SearchContent: React.FC<ISearchContentProps> = ({animation}) => {
 
 const styles = StyleSheet.create({
   searchContent: {
+    ...theme.backgorunds.bgWhite,
+    ...theme.layout.pAbsolute,
     width: deviceLayoutMetric.deviceWidth - 10,
-    backgroundColor: 'white',
     zIndex: 999,
-    position: 'absolute',
     top: 50,
     right: -5,
     paddingTop: 10,

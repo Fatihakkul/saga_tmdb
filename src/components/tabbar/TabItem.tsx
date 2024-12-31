@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Dimensions, Text} from 'react-native';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {useAppNavigation} from '../../hooks/useAppNavigation';
 import {TTabs} from '../../types/navigationTypes/TabNavigatorParamList';
 import {deviceLayoutMetric} from '../../constants/utils';
@@ -16,25 +16,25 @@ const TabItem: React.FC<Props> = ({tab, currentTabScreen}): JSX.Element => {
     <TouchableOpacity
       activeOpacity={0.9}
       onPress={() => navigation.navigate('TabNavigator', {screen: tab.name})}
-      style={{
-        alignItems: 'center',
-        width: (deviceLayoutMetric.deviceWidth - 40) / 2,
-        zIndex: 10,
-      }}>
+      style={style.container}>
       {tab.icon}
-      <Text
-        style={[
-          {
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            marginTop: 4,
-            color: 'black',
-          },
-        ]}>
-        {tab.label || tab.name}
-      </Text>
+      <Text style={style.label}>{tab.label || tab.name}</Text>
     </TouchableOpacity>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    width: (deviceLayoutMetric.deviceWidth - 40) / 2,
+    zIndex: 10,
+  },
+  label: {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    marginTop: 4,
+    color: 'black',
+  },
+});
 
 export default TabItem;

@@ -13,8 +13,8 @@ import CastList from './components/CastList';
 import SimilarMovies from './components/SimilarMovies';
 import MovieInfo from './components/MovieInfo';
 import MovieHeader from './components/MovieHeader';
-import {scale, verticalScale} from 'react-native-size-matters';
-import { isTablet } from '../../constants/utils';
+import {scale} from 'react-native-size-matters';
+import {theme} from '../../theme';
 
 type DetailScreenRouteProp = RouteProp<TRootStackParamlis, 'Detail'>;
 
@@ -42,9 +42,12 @@ const DetailScreen = ({route}: {route: DetailScreenRouteProp}) => {
       {isloading ? (
         <></>
       ) : (
-        <ScrollView style={{flex: 1}} contentContainerStyle={[style.scrollViewStyle]}  showsVerticalScrollIndicator={false}>
+        <ScrollView
+          style={[theme.layout.flex]}
+          contentContainerStyle={[style.scrollViewStyle]}
+          showsVerticalScrollIndicator={false}>
           <MovieHeader movie={movie} convertedMovie={convertedMovie as Movie} />
-          <View style={[style.scrollViewStyle,{paddingHorizontal: scale(10)}]}>
+          <View style={[style.scrollViewStyle, theme.layout.paddingX]}>
             <MovieInfo movie={movie} />
             <SimilarMovies similar={similar} />
             <CastList cast={cast} />
@@ -55,11 +58,10 @@ const DetailScreen = ({route}: {route: DetailScreenRouteProp}) => {
   );
 };
 
-
 const style = StyleSheet.create({
-  scrollViewStyle : {
-    gap:  scale(20)
-  }
-})
+  scrollViewStyle: {
+    gap: scale(20),
+  },
+});
 
 export default DetailScreen;

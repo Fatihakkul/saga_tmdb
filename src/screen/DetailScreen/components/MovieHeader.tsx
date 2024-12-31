@@ -3,8 +3,7 @@ import {ImageBackground, StyleSheet, View} from 'react-native';
 import {FavoriteButton} from '../../../components';
 import {theme} from '../../../theme';
 import {Movie, MovieDetail} from '../../../types/movieType';
-import { isTablet } from '../../../constants/utils';
-import { scale } from 'react-native-size-matters';
+import {scale} from 'react-native-size-matters';
 
 interface IMovieHeaderProps {
   movie: MovieDetail;

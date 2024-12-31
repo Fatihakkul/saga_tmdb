@@ -9,7 +9,9 @@ interface IMovieInfoCard {
 const MovieInfoCard: React.FC<IMovieInfoCard> = ({movie}) => {
   return (
     <View style={style.container}>
-      <Text style={{width:'60%'}} numberOfLines={1}>{movie.title}</Text>
+      <Text style={style.title} numberOfLines={1}>
+        {movie.title}
+      </Text>
       <Text>{movie.vote_average.toFixed(1)}</Text>
     </View>
   );
@@ -27,6 +29,9 @@ const style = StyleSheet.create({
     bottom: -5,
     right: 0,
     left: 0,
+  },
+  title: {
+    width: '60%',
   },
 });
 

@@ -1,32 +1,18 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import {
-  View,
   TextInput,
-  TouchableOpacity,
   StyleSheet,
   NativeSyntheticEvent,
   TextInputFocusEventData,
 } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Animated, {
-  useSharedValue,
   withTiming,
   useAnimatedStyle,
-  Easing,
   runOnJS,
   SharedValue,
   useAnimatedReaction,
 } from 'react-native-reanimated';
 import {deviceLayoutMetric} from '../../constants/utils';
-import {useDispatch} from 'react-redux';
-import {useTypedSelector} from '../../redux/store';
-import SearchContent from './SearchContent';
-import {
-  clearSearch,
-  searchMoviesRequest,
-} from '../../redux/actions/searchActions';
-import useDebounce from '../../hooks/useDebounce';
-import AnimatedButton from '../buttons/AnimatedIconButton';
 
 const AnimatedTextInput = ({
   animation,
@@ -65,9 +51,9 @@ const AnimatedTextInput = ({
     ref.current?.focus();
   };
 
-  const blurInput =()=>{
+  const blurInput = () => {
     ref.current?.blur();
-  }
+  };
 
   useAnimatedReaction(
     () => {
@@ -77,7 +63,7 @@ const AnimatedTextInput = ({
       if (value === 1 && previousValue === 0) {
         runOnJS(focusInput)();
       }
-      if(value === 0 &&  previousValue === 1){
+      if (value === 0 && previousValue === 1) {
         runOnJS(blurInput)();
       }
     },
@@ -86,16 +72,7 @@ const AnimatedTextInput = ({
 
   return (
     <Animated.View style={[styles.searchContainer, animatedStyle]}>
-      <Animated.View
-        style={[
-          {
-            width: '85%',
-            backgroundColor: '#e0e0e0',
-            borderRadius: 20,
-            alignSelf: 'center',
-          },
-          animatedSearchStyle,
-        ]}>
+      <Animated.View style={[styles.inputWrapper, animatedSearchStyle]}>
         <TextInput
           style={[styles.searchInput]}
           ref={ref}
@@ -110,15 +87,11 @@ const AnimatedTextInput = ({
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    position: 'absolute',
-    right: 10,
-    top: 0,
-    bottom: 0,
+  inputWrapper: {
+    width: '85%',
+    backgroundColor: '#e0e0e0',
+    borderRadius: 20,
+    alignSelf: 'center',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -128,14 +101,6 @@ const styles = StyleSheet.create({
   searchInput: {
     height: 40,
     width: '100%',
-  },
-  searchContent: {
-    width: deviceLayoutMetric.deviceWidth - 10,
-    backgroundColor: 'red',
-    zIndex: 999,
-    position: 'absolute',
-    top: 50,
-    right: -5,
   },
 });
 
