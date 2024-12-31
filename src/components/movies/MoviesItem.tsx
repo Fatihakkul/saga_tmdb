@@ -22,7 +22,12 @@ const MoviesItem: React.FC<IProps> = ({movie}) => {
       activeOpacity={0.9}
       style={[style.button]}
       onPress={() => navigation.navigate('Detail', {movieId: movie.id})}
-      delayPressIn={50}>
+      onLongPress={() => {
+        console.log('simuleted error');
+        navigation.navigate('Detail', {movieId: 12423345245234});
+      }}
+      delayLongPress={1000}
+      >
       <ImageBackground
         source={{uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}`}}
         resizeMethod="resize"

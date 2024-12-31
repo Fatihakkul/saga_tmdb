@@ -46,8 +46,10 @@ yarn android
 - [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated): Animasyonlar için.
 - [react-native-size-matters](https://github.com/nkbt/react-native-size-matters): Bileşen boyutları ve ölçüleri için.
 
-Projenin ekran görüntüleri:
+###Projenin ekran görüntüleri:
 
-## Ekran Görüntüsü 1
+## Ekran Görüntüsü 
 
 ![Ekran Görüntüsü 1](screenshots/responsive.png)
+
+![Uygulama Videosu](https://www.youtube.com/shorts/0CRhCaiSE5g)
