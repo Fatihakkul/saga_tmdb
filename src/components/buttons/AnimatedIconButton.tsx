@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {TouchableOpacity, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Animated, {
@@ -27,7 +27,7 @@ const AnimatedButton: React.FC<IAnimatedIcon> = ({onPress}) => {
     setIcon(prev => (prev === 'close' ? 'search' : 'close'));
   };
 
-  const triggerAnimation = () => {
+  const triggerAnimation = useCallback(() => {
     scale.value = withTiming(
       0,
       {duration: 300, easing: Easing.inOut(Easing.ease)},
@@ -39,7 +39,7 @@ const AnimatedButton: React.FC<IAnimatedIcon> = ({onPress}) => {
         });
       },
     );
-  };
+  }, [scale,icon]);
 
   return (
     <TouchableOpacity

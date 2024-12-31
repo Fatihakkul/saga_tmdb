@@ -9,4 +9,5 @@ export type TTabs = {
   name: keyof TabNavigatorParamList;
   label: string;
   icon: ReactNode;
+  activeIcon: ReactNode;
 };

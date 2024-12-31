@@ -17,7 +17,7 @@ const TabItem: React.FC<Props> = ({tab, currentTabScreen}): JSX.Element => {
       activeOpacity={0.9}
       onPress={() => navigation.navigate('TabNavigator', {screen: tab.name})}
       style={style.container}>
-      {tab.icon}
+      {currentTabScreen === tab.name ? tab.activeIcon : tab.icon}
       <Text style={style.label}>{tab.label || tab.name}</Text>
     </TouchableOpacity>
   );

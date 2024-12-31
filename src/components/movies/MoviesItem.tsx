@@ -10,6 +10,7 @@ import FavoriteButton from '../buttons/FavoriteButtons';
 import {useAppNavigation} from '../../hooks/useAppNavigation';
 import MovieInfoCard from './MovieInfoCard';
 import {verticalScale} from 'react-native-size-matters';
+import { memo } from 'react';
 
 interface IProps {
   movie: Movie;
@@ -72,4 +73,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default MoviesItem;
+export default memo(MoviesItem);
