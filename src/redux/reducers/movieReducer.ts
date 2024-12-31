@@ -1,13 +1,11 @@
-import { ICast } from '../../types/CastType';
-import { Movie, MovieDetail} from '../../types/movieType';
+import {ICast} from '../../types/CastType';
+import {Movie, MovieDetail} from '../../types/movieType';
 import * as types from '../action_types/moviesTypes';
 
 interface MovieState {
   movies: Movie[];
   page: number;
   totalPage: number;
-  error: any;
-  loading: boolean;
   movieDetail: {
     movie: MovieDetail;
     similar: Movie[];
@@ -17,8 +15,6 @@ interface MovieState {
 
 const initialState: MovieState = {
   movies: [],
-  error: undefined,
-  loading: false,
   page: 0,
   totalPage: 0,
   movieDetail: {
@@ -31,34 +27,26 @@ const initialState: MovieState = {
 const movieReducer = (state = initialState, action: any): MovieState => {
   switch (action.type) {
     case types.FETCH_MOVIE_REQUEST:
-      return {...state, loading: true};
+      return {...state};
     case types.FETCH_MOVIE_SUCCESS:
-      return {...state, movieDetail: action.payload, loading: false};
-    case types.FETCH_MOVIE_FAILURE:
-      return {...state, error: action.payload?.message ?? true, loading: false};
+      return {...state, movieDetail: action.payload};
     case types.FETCH_POPULAR_MOVIES_REQUEST:
-      return {...state, movies: [], loading: true};
+      return {...state, movies: []};
     case types.FETCH_POPULAR_MOVIES_SUCCESS:
       return {
         ...state,
         movies: action.payload.results,
         page: action.payload.page,
         totalPage: action.payload.total_pages,
-        loading: false,
       };
-    case types.FETCH_POPULAR_MOVIES_FAILURE:
-      return {...state, error: action.payload?.message ?? true, loading: false};
     case types.LOAD_FETCH_POPULAR_MOVIES_REQUEST:
-      return {...state, page: state.page + 1, loading: true};
+      return {...state, page: state.page + 1};
     case types.LOAD_FETCH_POPULAR_MOVIES_SUCCESS:
       return {
         ...state,
         movies: [...state.movies, ...action.payload.results],
         page: action.payload.page,
-        loading: false,
       };
-    case types.LOAD_FETCH_POPULAR_MOVIES_FAILURE:
-      return {...state, error: action.payload?.message ?? true, loading: false};
     default:
       return state;
   }

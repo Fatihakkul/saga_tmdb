@@ -25,7 +25,6 @@ const DetailScreen = ({route}: {route: DetailScreenRouteProp}) => {
   const {movie, similar, cast} = useTypedSelector(
     state => state.movie.movieDetail,
   );
-  const {loading: isloading} = useTypedSelector(state => state.movie);
 
   const convertedMovie = useMemo(
     () => (movie.id ? convertMovieDetailToMovie(movie) : {}),
@@ -39,9 +38,6 @@ const DetailScreen = ({route}: {route: DetailScreenRouteProp}) => {
   return (
     <Container>
       <Header goBack={navigation.canGoBack()} title="Movie Detail" />
-      {isloading ? (
-        <></>
-      ) : (
         <ScrollView
           style={[theme.layout.flex]}
           contentContainerStyle={[style.scrollViewStyle]}
@@ -53,7 +49,6 @@ const DetailScreen = ({route}: {route: DetailScreenRouteProp}) => {
             <CastList cast={cast} />
           </View>
         </ScrollView>
-      )}
     </Container>
   );
 };

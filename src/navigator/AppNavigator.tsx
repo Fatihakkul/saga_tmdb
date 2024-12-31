@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import DetailScreen from '../screen/DetailScreen/DetailScreen';
 import TabNavigator from './TabNavigator';
 import {TRootStackParamlis} from '../types/navigationTypes/RootStackParamList';
+import ArtistDetail from '../screen/CastScreen/CastScreen';
 
 const Stack = createStackNavigator<TRootStackParamlis>();
 
@@ -15,6 +16,7 @@ const AppNavigator = () => {
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="TabNavigator" component={TabNavigator} />
         <Stack.Screen name="Detail" component={DetailScreen} />
+        <Stack.Screen name="ArtistDetail" component={ArtistDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,6 +6,7 @@ import InfoText from './movies/InfoText';
 import AppLoading from './AppLoading';
 import CastItem from './items/CastItem';
 import ListSeperator from './ListSeperator';
+import TitleWithDescription from './cards/TitleWithDescription';
 
 export {
   CastItem,
@@ -15,5 +16,6 @@ export {
   Container,
   InfoText,
   AppLoading,
-  ListSeperator
+  ListSeperator,
+  TitleWithDescription
 };

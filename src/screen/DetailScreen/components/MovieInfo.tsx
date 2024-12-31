@@ -4,6 +4,7 @@ import {MovieDetail} from '../../../types/movieType';
 import {InfoText} from '../../../components';
 import {theme} from '../../../theme';
 import {scale} from 'react-native-size-matters';
+import TitleWithDescription from '../../../components/cards/TitleWithDescription';
 
 interface IMovieHeaderProps {
   movie: MovieDetail;
@@ -21,10 +22,7 @@ const MovieInfo: React.FC<IMovieHeaderProps> = ({movie}) => (
       />
       <InfoText value={movie.release_date} title="Release Date" />
     </View>
-    <View style={[theme.layout.sgap]}>
-      <Text style={[theme.text.title]}>Description</Text>
-      <Text style={[theme.text.textSmall]}>{movie.overview}</Text>
-    </View>
+    <TitleWithDescription title="Description" description={movie.overview} />
   </View>
 );
 

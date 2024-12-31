@@ -8,6 +8,7 @@ interface FavoriteState {
 const initialState: FavoriteState = {
   favorites: [],
 };
+
 const favoriteReducer = (state = initialState, action: any): FavoriteState => {
   switch (action.type) {
     case types.ADD_TO_FAVORITES:

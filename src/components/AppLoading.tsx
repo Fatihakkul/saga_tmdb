@@ -3,7 +3,7 @@ import {useTypedSelector} from '../redux/store';
 import {theme} from '../theme';
 
 const AppLoading: React.FC = () => {
-  const isLoading = useTypedSelector(state => state.movie.loading);
+  const isLoading = useTypedSelector(state => state.globalState.loading);
 
   if (!isLoading) return null;
   return (
