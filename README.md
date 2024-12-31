@@ -11,7 +11,7 @@ git clone https://github.com/Fatihakkul/saga_tmdb
 
 #### Proje dizininde paketleri yükle
 ```
-yarn 
+cd saga_tmdb && yarn 
 ```
 
 #### Pods'ları yükle 
@@ -46,7 +46,7 @@ yarn android
 - [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated): Animasyonlar için.
 - [react-native-size-matters](https://github.com/nkbt/react-native-size-matters): Bileşen boyutları ve ölçüleri için.
 
-###Projenin ekran görüntüleri:
+### Projenin ekran görüntüleri:
 
 ## Ekran Görüntüsü 
 
