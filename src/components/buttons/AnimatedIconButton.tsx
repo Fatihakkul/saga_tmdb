@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {TouchableOpacity, StyleSheet} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Animated, {
   useSharedValue,
@@ -8,7 +8,6 @@ import Animated, {
   Easing,
   runOnJS,
 } from 'react-native-reanimated';
-import {deviceLayoutMetric} from '../../constants/utils';
 
 interface IAnimatedIcon {
   onPress: () => void;
@@ -39,7 +38,7 @@ const AnimatedButton: React.FC<IAnimatedIcon> = ({onPress}) => {
         });
       },
     );
-  }, [scale,icon]);
+  }, [scale, icon]);
 
   return (
     <TouchableOpacity
@@ -53,35 +52,5 @@ const AnimatedButton: React.FC<IAnimatedIcon> = ({onPress}) => {
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    position: 'absolute',
-    right: 10,
-    top: 0,
-    bottom: 0,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 20,
-  },
-  searchInput: {
-    height: 40,
-    width: '100%',
-  },
-  searchContent: {
-    width: deviceLayoutMetric.deviceWidth - 10,
-    backgroundColor: 'red',
-    zIndex: 999,
-    position: 'absolute',
-    top: 50,
-    right: -5,
-  },
-});
 
 export default AnimatedButton;

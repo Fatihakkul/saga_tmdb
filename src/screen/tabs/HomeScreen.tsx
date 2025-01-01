@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo} from 'react';
 import {FlatList, View, StyleSheet} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {RootState} from '../../redux/store';
+import {useDispatch} from 'react-redux';
+import {useTypedSelector} from '../../redux/store';
 import {
   fetchMoviesRequest,
   loadMoreMoviesRequest,
@@ -15,7 +15,8 @@ import {theme} from '../../theme';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const {movies, loading} = useSelector((state: RootState) => state.movie);
+  const {movies} = useTypedSelector(state => state.movie);
+  const {loading} = useTypedSelector(state => state.globalState);
 
   useEffect(() => {
     dispatch(fetchMoviesRequest());
@@ -35,6 +36,7 @@ const HomeScreen = () => {
   const loadMore = () => {
     if (!loading) dispatch(loadMoreMoviesRequest());
   };
+
   return (
     <Container>
       <Header title="RN Movies App" search={true} />

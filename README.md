@@ -39,6 +39,7 @@ yarn android
 - [react-navigation](https://reactnavigation.org/): Uygulama yönlendirme yapısı için.
 - [react-native-async-storage](https://github.com/react-native-async-storage/async-storage): Lokalde veri depolama çözümleri için.
 - [redux](https://redux.js.org/): Durum yönetimi için.
+- [redux-saga](https://redux-saga.js.org/): Asenkron işlemleri yönetilmesi için.
 - [redux-persist](https://github.com/rt2zz/redux-persist): Global verilerin lokalde tutulmasına yardımcı olmak için.
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons): Uygulama için vektör ikonlar.
 - [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image): Yüksek performanslı resim yükleme için.
@@ -48,8 +49,10 @@ yarn android
 
 ### Projenin ekran görüntüleri:
 
-## Ekran Görüntüsü 
+## Ekran Görüntüleri ve Videolar
 
-![Ekran Görüntüsü 1](screenshots/responsive.png)
+![Ekran Görüntüsü](screenshots/responsive.png)
 
 [Uygulama Videosu](https://www.youtube.com/watch?v=0CRhCaiSE5g)
+
+[Uygulama Videosu 2](https://www.youtube.com/shorts/bbRQV3I8qY0)
