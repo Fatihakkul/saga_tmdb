@@ -1,7 +1,5 @@
 # MoviesApp
 
-Bu projede kullanılan başlıca kütüphaneler ve işlevleri:
-
 ## Kurulum adımları
 
 #### Projeyi klonla
